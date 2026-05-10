@@ -235,8 +235,8 @@
     </header>
 
     <!-- --- MODULE: HERO SECTION --- -->
-    <!-- Cập nhật: Sử dụng pt-28 items-start cho mobile để chữ trồi hẳn lên bám sát thanh header, PC giữ items-center -->
-    <section class="relative min-h-[85vh] lg:min-h-screen pt-28 lg:pt-40 pb-10 px-4 md:px-8 z-10 flex items-start lg:items-center reveal">
+    <!-- Cập nhật: Gỡ bỏ min-h-[85vh] trên mobile để khối này ôm sát hình, giảm pb-10 thành pb-2 để hút khối About lên -->
+    <section class="relative lg:min-h-screen pt-28 lg:pt-40 pb-2 lg:pb-10 px-4 md:px-8 z-10 flex items-start lg:items-center reveal">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="flex flex-col">
                 <div class="hero-title-custom mb-6 flex flex-col font-bold uppercase">
@@ -256,14 +256,16 @@
                     <span class="text-[12px] md:text-[14px] uppercase font-light tracking-wider stretched-text">Powered by Gemini AI Core</span>
                 </div>
             </div>
-            <div class="relative flex justify-center items-center mt-6 md:mt-0">
+            <!-- Cập nhật: giảm mt-6 xuống mt-2 trên mobile để khít hơn -->
+            <div class="relative flex justify-center items-center mt-2 lg:mt-0">
                 <img src="https://mine.hashnetwork.live/images/home/Farm1.png" alt="Visual" class="w-full max-w-[400px] md:max-w-[500px] drop-shadow-[0_0_30px_rgba(244,180,26,0.3)]">
             </div>
         </div>
     </section>
 
     <!-- --- MODULE: ABOUT SECTION --- -->
-    <section class="relative z-10 px-4 md:px-8 py-10 reveal">
+    <!-- Cập nhật: Đổi py-10 thành pt-2 pb-10 trên mobile để ép lên sát phần Hero -->
+    <section class="relative z-10 px-4 md:px-8 pt-2 pb-10 lg:py-10 reveal">
         <div class="max-w-6xl mx-auto pro-container p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center hover-glow-card">
             <div class="space-y-6 md:space-y-8">
                 <div class="text-[15px] md:text-[17px] leading-relaxed text-white/90 font-light">
