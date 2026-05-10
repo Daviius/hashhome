@@ -277,20 +277,18 @@
 
     <!-- --- MODULE: PROCESS & WHY --- -->
     <section class="relative z-10 px-4 md:px-8 pt-2 pb-10 lg:py-10 reveal">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-16">
+        <!-- Thay đổi: Nới rộng gap cho MINE/GROW/REWARD trên mobile (gap-6) và đẩy khối WHY HASH NETWORK lên trên bằng cách giảm mb xuống mb-8 -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 mb-8 md:mb-16">
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
                     <h3 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text">MINE</h3>
-                    <!-- Thay đổi: text lớn trên mobile, trả về nhỏ gọn trên PC -->
                     <p class="text-white text-[15px] md:text-[12px] mt-2 md:mt-1">Harness computing power<br>to generate hash.</p>
                 </div>
-                <!-- Thu nhỏ icon trên PC để không ép chữ, giữ to trên mobile -->
                 <img src="https://mine.hashnetwork.live/images/home/IconMine.png" class="w-24 md:w-20 lg:w-28 object-contain">
             </div>
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
                     <h3 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text">GROW</h3>
-                    <!-- Thay đổi: text lớn trên mobile, trả về nhỏ gọn trên PC -->
                     <p class="text-white text-[15px] md:text-[12px] mt-2 md:mt-1">Strengthen network<br>and scale together.</p>
                 </div>
                 <img src="https://mine.hashnetwork.live/images/home/IconGrow.png" class="w-24 md:w-20 lg:w-28 object-contain">
@@ -298,7 +296,6 @@
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
                     <h3 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text">REWARD</h3>
-                    <!-- Thay đổi: text lớn trên mobile, trả về nhỏ gọn trên PC -->
                     <p class="text-white text-[15px] md:text-[12px] mt-2 md:mt-1">Earn real mining rewards<br>from participation.</p>
                 </div>
                 <img src="https://mine.hashnetwork.live/images/home/Icon_Reward.png" class="w-24 md:w-20 lg:w-28 object-contain">
@@ -306,8 +303,11 @@
         </div>
 
         <div class="max-w-7xl mx-auto pro-container p-6 md:p-12">
-            <h2 class="section-title-large mb-12">WHY HASH NETWORK?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <!-- Giảm margin-bottom của tiêu đề trên mobile để chữ DECENTRALIZED xích lên gần tiêu đề hơn -->
+            <h2 class="section-title-large mb-8 md:mb-12">WHY HASH NETWORK?</h2>
+            
+            <!-- Thay đổi: Tăng gap trên mobile lên gap-10 (bằng 2 khung đỏ), PC giữ nguyên gap-8 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
                 <div class="bg-black/40 border border-[#F4B41A]/20 rounded-2xl md:rounded-[2rem] p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-8 hover-glow-card text-center md:text-left">
                     <img src="https://mine.hashnetwork.live/images/home/Icon Decentralized.png" class="w-20 md:w-24 object-contain">
                     <div><h4 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text mb-2 md:mb-3">DECENTRALIZED</h4><p class="text-white/60 text-sm md:text-base font-light">Community powered. No central entity.<br>True decentralization.</p></div>
