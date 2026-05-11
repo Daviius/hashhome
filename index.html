@@ -9,16 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* =========================================================================
-           KHU VỰC CSS THUẦN: CHỈNH SỬA MỌI KHOẢNG CÁCH TẠI ĐÂY
-           Mày muốn sửa lề trên, lề dưới, khoảng cách các khối thì thay số ở đây.
-           ========================================================================= */
-
-        /* ---------------------------------------------------
-           1. CẤU HÌNH CHO ĐIỆN THOẠI (MOBILE) 
-           --------------------------------------------------- */
-        
-        /* Khoảng cách viền ngoài của các Section */
+              
+       
         #main-header { padding: 16px 16px 0 16px; }
         #hero-section { padding: 120px 20px 20px 20px; }
         #about-section { padding: 40px 20px; }
@@ -27,31 +19,27 @@
         #roadmap-section { padding: 10px 20px; }
         #footer-section { padding: 26px 20px 80px 20px; }
 
-        /* Khoảng cách bên trong các khung to (như khung màu tím About, Roadmap) */
+       
         .inner-box-padding { padding: 24px; }
 
-        /* Khoảng cách hở phía dưới (Margin Bottom) của tiêu đề và các khối */
-        .title-spacing { margin-bottom: 20px; } /* Khoảng cách dưới chữ "WHY HASH", "$HASH TOKENOMICS"... */
-        .box-spacing { margin-bottom: 40px; } /* Khoảng cách giữa các khung lớn với nhau */
+       
+        .title-spacing { margin-bottom: 20px; } 
+        .box-spacing { margin-bottom: 40px; } 
 
-        /* Khoảng cách (Gap) giữa các thẻ bên trong (Grid/Flex) */
-        .custom-grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; } /* VD: Hero Section */
-        .custom-grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; } /* VD: 3 thẻ MINE GROW REWARD */
+        .custom-grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; } 
+        .custom-grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; } 
         
-        /* DÀNH RIÊNG CHO PHẦN TOKENOMICS (Chỉnh thoải mái không sợ lỗi) */
-        #tokenomics-grid { display: grid; grid-template-columns: 1fr; gap: 24px; } /* Khoảng cách giữa Biểu đồ to và Cột bên phải */
-        #tokenomics-right-col { display: flex; flex-direction: column; gap: 24px; } /* Khoảng cách giữa Bảng % và Khung Tên Project */
+      
+        #tokenomics-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        #tokenomics-right-col { display: flex; flex-direction: column; gap: 24px; } 
 
-        /* DÀNH RIÊNG CHO FOOTER */
+     
         #footer-middle-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
 
 
-        /* ---------------------------------------------------
-           2. CẤU HÌNH CHO MÁY TÍNH (DESKTOP LỚN HƠN 1024px)
-           Mày muốn PC cách nhau bao nhiêu thì gõ ở đây.
-           --------------------------------------------------- */
+        
         @media (min-width: 1024px) {
-            /* Khoảng cách viền ngoài */
+            
             #main-header { padding: 24px 48px 0 48px; }
             #hero-section { padding: 160px 48px 20px 48px; }
             #about-section { padding: 60px 48px; }
@@ -60,29 +48,26 @@
             #roadmap-section { padding: 60px 48px; }
             #footer-section { padding: 60px 48px 100px 48px; }
 
-            /* Khoảng cách bên trong khung to */
+          
             .inner-box-padding { padding: 60px; }
 
-            /* Khoảng cách dưới tiêu đề và khung */
+            
             .title-spacing { margin-bottom: 60px; }
             .box-spacing { margin-bottom: 60px; }
 
-            /* Chia cột và khoảng cách Grid trên PC */
+            
             .custom-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 64px; }
             .custom-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 32px; }
 
-            /* Tokenomics trên PC */
+           
             #tokenomics-grid { grid-template-columns: repeat(2, 1fr); gap: 64px; }
             #tokenomics-right-col { gap: 48px; } /* Chỉnh khe hở giữa 2 bảng Tokenomics trên PC tại đây */
 
-            /* Footer trên PC */
+            
             #footer-middle-grid { grid-template-columns: repeat(2, 1fr); gap: 64px; }
         }
 
-        /* =========================================================================
-           KẾT THÚC KHU VỰC CHỈNH SỬA KHOẢNG CÁCH (Bên dưới là CSS Mặc Định)
-           ========================================================================= */
-
+        
         :root {
             --gold-primary: #F4B41A;
             --gold-gradient: linear-gradient(180deg, #FAD961 0%, #F4B41A 100%);
@@ -90,7 +75,7 @@
             --purple-border: rgba(88, 28, 135, 0.4);
         }
 
-        /* Khóa cứng web, chống bị vuốt lòi viền ngang đen thui */
+       
         html, body {
             font-family: 'Chakra Petch', sans-serif;
             background-color: #000000;
@@ -362,7 +347,7 @@
             </div>
         </div>
 
-        <!-- Why Hash Network Khung To -->
+        <!-- Why Hash Network ->
         <div class="max-w-7xl mx-auto pro-container inner-box-padding">
             <h2 class="section-title-large title-spacing">WHY HASH NETWORK?</h2>
             <div class="custom-grid-2">
@@ -391,12 +376,12 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="section-title-large title-spacing">$HASH TOKENOMICS</h2>
             <div id="tokenomics-grid">
-                <!-- Cột Trái (Biểu đồ to) -->
+              
                 <div class="asset-box min-h-[400px] lg:min-h-[600px] flex items-center justify-center p-4">
                     <img src="https://mine.hashnetwork.live/images/home/Tokenomics.png" class="w-full h-full object-contain">
                 </div>
                 
-                <!-- Cột Phải -->
+               
                 <div id="tokenomics-right-col">
                     <div class="asset-box h-[300px] lg:h-[450px] flex items-center justify-center p-4">
                         <img src="https://mine.hashnetwork.live/images/home/Allocation.png" class="w-full h-full object-contain">
