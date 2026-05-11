@@ -19,13 +19,12 @@
         #roadmap-section { padding: 26px 0px; }
         #footer-section { padding: 6px 0px 80px; }
 
+        .title-spacing { margin-bottom: 32px; }
+        .box-spacing { margin-bottom: 32px; }
 
         @media (min-width: 768px) {
-        span.gold-text.font-bold { font-size: 12px !important; }
-       img.h-6.md\:h-8 { height: 45px !important; }
-        .title-spacing { margin-bottom: 20px; } 
-        .box-spacing { margin-bottom: 18px; } 
-        span.stretched-text.text-left.block { font-size: 40px ;}
+            .title-spacing { margin-bottom: 40px; }
+            .box-spacing { margin-bottom: 40px; }
         }
         
         .inner-box-padding { padding: 24px; }
@@ -91,6 +90,8 @@
             max-width: 100vw;
             overflow-x: hidden !important;
             position: relative;
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .hero-title-custom {
@@ -98,6 +99,11 @@
             line-height: 1.1 !important;
         }
 
+        .hero-subtitle {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
 
         
         @media (min-width: 768px) {
@@ -127,6 +133,7 @@
             width: 100%;
             transform: scaleX(1.1);
             transform-origin: center;
+            line-height: 1.1;
         }
 
         @media (min-width: 768px) {
@@ -136,7 +143,7 @@
             }
         }
 
-        .gold-text { color: var(--gold-primary); font-size: 21px; }
+        .gold-text { color: var(--gold-primary); }
         
         .gold-btn-gradient {
             background: var(--gold-gradient);
@@ -295,8 +302,8 @@
                     <div class="flex items-center justify-start gap-6 md:gap-12 w-full"><span class="stretched-text text-white">GROW</span><svg class="w-10 md:w-16 h-6 md:h-8 gold-text flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 64 24" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h56M46 4l12 8-12 8" /></svg></div>
                     <div class="gold-text"><span class="stretched-text text-left block">REWARD</span></div>
                 </div>
-                <div class="space-y-2 mb-6 text-[14px] md:text-[18px] font-light uppercase tracking-wider text-white/90">
-                    <p class="stretched-text">Turn participation <span class="gold-text font-bold">INTO HASH POWER.</span></p><br>
+                <div class="hero-subtitle mb-6 text-[14px] md:text-[18px] font-light uppercase tracking-wider text-white/90">
+                    <p class="stretched-text">Turn participation <span class="gold-text font-bold">INTO HASH POWER.</span></p>
                     <p class="stretched-text">Turn hash power <span class="gold-text font-bold">INTO REAL MINING REWARDS.</span></p>
                 </div>
                 <div class="mb-6">
@@ -334,21 +341,21 @@
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
                     <h3 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text">MINE</h3>
-                    <p class="text-white text-[15px] md:text-[12px] mt-2 md:mt-1">Harness computing power<br>to generate hash.</p>
+                    <p class="text-white text-[14px] md:text-[15px] mt-2 md:mt-1">Harness computing power<br>to generate hash.</p>
                 </div>
                 <img src="https://mine.hashnetwork.live/images/home/IconMine.png" class="w-24 md:w-20 lg:w-28 object-contain">
             </div>
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
                     <h3 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text">GROW</h3>
-                    <p class="text-white text-[15px] md:text-[12px] mt-2 md:mt-1">Strengthen network<br>and scale together.</p>
+                    <p class="text-white text-[14px] md:text-[15px] mt-2 md:mt-1">Strengthen network<br>and scale together.</p>
                 </div>
                 <img src="https://mine.hashnetwork.live/images/home/IconGrow.png" class="w-24 md:w-20 lg:w-28 object-contain">
             </div>
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
                     <h3 class="gold-text text-xl md:text-2xl font-bold uppercase stretched-text">REWARD</h3>
-                    <p class="text-white text-[15px] md:text-[12px] mt-2 md:mt-1">Earn real mining rewards<br>from participation.</p>
+                    <p class="text-white text-[14px] md:text-[15px] mt-2 md:mt-1">Earn real mining rewards<br>from participation.</p>
                 </div>
                 <img src="https://mine.hashnetwork.live/images/home/Icon_Reward.png" class="w-24 md:w-20 lg:w-28 object-contain">
             </div>
