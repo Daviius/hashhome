@@ -14,9 +14,11 @@
         #hero-section { padding: 120px 20px 20px 20px; }
         #about-section { padding: 40px 20px; }
         #process-section { padding: 0px 20px; }
-        #tokenomics-section { padding: 24px 0px; }
         #roadmap-section { padding: 26px 20px; }
         #footer-section { padding: 6px 20px 80px; }
+
+        /* Class chốt cứng khoảng cách 10px giữa Roadmap và Stats */
+        .roadmap-stats-gap { margin-bottom: 10px !important; }
 
         @media (min-width: 768px) {
         span.gold-text.font-bold { font-size: 12px !important; }
@@ -31,9 +33,6 @@
         
         .custom-grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; } 
         .custom-grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; } 
-        
-        #tokenomics-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        #tokenomics-right-col { display: flex; flex-direction: column; gap: 24px; } 
 
         #footer-middle-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
 
@@ -43,7 +42,6 @@
             #hero-section { padding: 160px 48px 20px 48px; }
             #about-section { padding: 60px 48px; }
             #process-section { padding: 60px 48px; }
-            #tokenomics-section { padding: 60px 48px; }
             #roadmap-section { padding: 60px 48px; }
             #footer-section { padding: 60px 48px 100px 48px; }
 
@@ -54,9 +52,6 @@
 
             .custom-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 64px; }
             .custom-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 32px; }
-
-            #tokenomics-grid { grid-template-columns: repeat(2, 1fr); gap: 64px; }
-            #tokenomics-right-col { gap: 48px; } /* Chỉnh khe hở giữa 2 bảng Tokenomics trên PC tại đây */
 
             #footer-middle-grid { grid-template-columns: repeat(2, 1fr); gap: 64px; }
         }
@@ -275,7 +270,6 @@
     <section id="hero-section" class="relative z-20 reveal">
         <div class="max-w-7xl mx-auto w-full custom-grid-2 items-center">
             <div class="flex flex-col">
-                <!-- SỬA LỖI TẠI ĐÂY: Ép size trực tiếp cho chữ REWARD để thoát khỏi giới hạn 21px của class gold-text -->
                 <div class="hero-title-custom mb-6 flex flex-col font-bold uppercase w-full">
                     <div class="flex items-center justify-start gap-6 md:gap-12 w-full"><span class="stretched-text text-white flex-shrink-0">MINE</span><svg class="w-10 md:w-16 h-6 md:h-8 gold-text flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 64 24" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h56M46 4l12 8-12 8" /></svg></div>
                     <div class="flex items-center justify-start gap-6 md:gap-12 w-full"><span class="stretched-text text-white flex-shrink-0">GROW</span><svg class="w-10 md:w-16 h-6 md:h-8 gold-text flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 64 24" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h56M46 4l12 8-12 8" /></svg></div>
@@ -364,9 +358,12 @@
         </div>
     </section>
 
-       <!-- --- ROADMAP & STATS SECTION --- -->
+    <!-- XÓA HOÀN TOÀN TOKENOMICS THEO ĐÚNG YÊU CẦU -->
+
+    <!-- --- ROADMAP & STATS SECTION --- -->
     <section id="roadmap-section" class="relative z-10 reveal">
-        <div class="max-w-7xl mx-auto pro-container inner-box-padding box-spacing">
+        <!-- Đã thêm class roadmap-stats-gap vào để chốt cứng đúng 10px khoảng cách -->
+        <div class="max-w-7xl mx-auto pro-container inner-box-padding box-spacing roadmap-stats-gap">
             <div class="custom-grid-3">
                 <div class="phase-box">
                     <h3 class="gold-text font-bold uppercase stretched-text mb-4 text-[1rem] md:text-[1.25rem]">PHASE 1 — FOUNDATION</h3>
