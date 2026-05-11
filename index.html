@@ -14,11 +14,14 @@
         #hero-section { padding: 120px 20px 20px 20px; }
         #about-section { padding: 40px 20px; }
         #process-section { padding: 0px 20px; }
+        #tokenomics-section { padding: 24px 0px; }
         #roadmap-section { padding: 26px 20px; }
         #footer-section { padding: 6px 20px 80px; }
 
-        /* Class chốt cứng khoảng cách 10px giữa Roadmap và Stats */
-        .roadmap-stats-gap { margin-bottom: 10px !important; }
+        /* SỬA LỖI TẠI ĐÂY: Khóa class này chỉ cho phép chạy trên Mobile, để Desktop không bị hẹp lại còn 10px */
+        @media (max-width: 1023px) {
+            .roadmap-stats-gap { margin-bottom: 10px !important; }
+        }
 
         @media (min-width: 768px) {
         span.gold-text.font-bold { font-size: 12px !important; }
@@ -27,7 +30,6 @@
         .box-spacing { margin-bottom: 18px; } 
         span.stretched-text.text-left.block { font-size: 40px ;}
         .max-w-7xl.mx-auto.custom-grid-3 { padding-top: 24px;}
-        
         }
         
         .inner-box-padding { padding: 24px; }
@@ -39,13 +41,15 @@
 
         @media (min-width: 1024px) {
             
+            /* SỬA LỖI TẠI ĐÂY: Đưa tất cả padding-bottom về 0px để không bị cộng dồn, tạo ra khoảng cách CHÍNH XÁC 60px đều nhau cho mọi khối */
             #main-header { padding: 24px 48px 0 48px; }
-            #hero-section { padding: 160px 48px 20px 48px; }
-            #about-section { padding: 60px 48px; }
-            #process-section { padding: 60px 48px; }
-            #roadmap-section { padding: 60px 48px; }
-            #footer-section { padding: 60px 48px 100px 48px; }
-            
+            #hero-section { padding: 160px 48px 0px 48px; }
+            #about-section { padding: 60px 48px 0px 48px; }
+            #process-section { padding: 60px 48px 0px 48px; }
+            #tokenomics-section { padding: 60px 48px 0px 48px; }
+            #roadmap-section { padding: 60px 48px 0px 48px; }
+            #footer-section { padding: 60px 48px 100px 48px; } /* Riêng footer giữ đáy 100px để kết thúc trang đẹp */
+
             .inner-box-padding { padding: 60px; }
 
             .title-spacing { margin-bottom: 60px; }
@@ -359,11 +363,8 @@
         </div>
     </section>
 
-    <!-- XÓA HOÀN TOÀN TOKENOMICS THEO ĐÚNG YÊU CẦU -->
-
     <!-- --- ROADMAP & STATS SECTION --- -->
     <section id="roadmap-section" class="relative z-10 reveal">
-        <!-- Đã thêm class roadmap-stats-gap vào để chốt cứng đúng 10px khoảng cách -->
         <div class="max-w-7xl mx-auto pro-container inner-box-padding box-spacing roadmap-stats-gap">
             <div class="custom-grid-3">
                 <div class="phase-box">
