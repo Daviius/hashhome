@@ -7,24 +7,57 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
+    
     <style>
+        
         #main-header { padding: 16px 16px 0 16px; }
-        #hero-section { padding: 110px 20px 60px 20px; }
-        #about-section { padding: 60px 20px; }
-        #process-section { padding: 60px 20px; }
-        #tokenomics-section { padding: 60px 20px; }
-        #roadmap-section { padding: 60px 20px; }
-        #footer-section { padding: 40px 20px 80px; }
+        #hero-section { padding: 120px 20px 20px 20px; }
+        #about-section { padding: 40px 20px; }
+        #process-section { padding: 0px 20px; }
+        #tokenomics-section { padding: 24px 0px; }
+        #roadmap-section { padding: 26px 0px; }
+        #footer-section { padding: 6px 0px 80px; }
+
+        @media (min-width: 768px) {
+        span.gold-text.font-bold { font-size: 12px !important; }
+        img.h-6.md\:h-8 { height: 45px !important; }
+        .title-spacing { margin-bottom: 20px; } 
+        .box-spacing { margin-bottom: 18px; } 
+        span.stretched-text.text-left.block { font-size: 40px ;}
+        }
+        
+        .inner-box-padding { padding: 24px; }
+        
+        .custom-grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; } 
+        .custom-grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; } 
+        
+        #tokenomics-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        #tokenomics-right-col { display: flex; flex-direction: column; gap: 24px; } 
+
+        #footer-middle-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
 
         @media (min-width: 1024px) {
+            
             #main-header { padding: 24px 48px 0 48px; }
-            #hero-section { padding: 160px 48px 80px 48px; }
-            #about-section { padding: 80px 48px; }
-            #process-section { padding: 80px 48px; }
-            #tokenomics-section { padding: 80px 48px; }
-            #roadmap-section { padding: 80px 48px; }
-            #footer-section { padding: 80px 48px 100px 48px; }
+            #hero-section { padding: 160px 48px 20px 48px; }
+            #about-section { padding: 60px 48px; }
+            #process-section { padding: 60px 48px; }
+            #tokenomics-section { padding: 60px 48px; }
+            #roadmap-section { padding: 60px 48px; }
+            #footer-section { padding: 60px 48px 100px 48px; }
+
+            .inner-box-padding { padding: 60px; }
+
+            .title-spacing { margin-bottom: 60px; }
+            .box-spacing { margin-bottom: 60px; }
+
+            .custom-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 64px; }
+            .custom-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+            #tokenomics-grid { grid-template-columns: repeat(2, 1fr); gap: 64px; }
+            #tokenomics-right-col { gap: 48px; } /* Chỉnh khe hở giữa 2 bảng Tokenomics trên PC tại đây */
+
+            #footer-middle-grid { grid-template-columns: repeat(2, 1fr); gap: 64px; }
         }
 
         :root {
@@ -50,6 +83,7 @@
             font-size: 2.5rem !important;
             line-height: 1.1 !important;
         }
+
         @media (min-width: 768px) {
             .hero-title-custom {
                 font-size: 4.25rem !important;
@@ -59,15 +93,16 @@
 
         .stretched-text {
             display: inline-block;
-            transform: scaleX(1.1);
+            transform: scaleX(1.1); 
             transform-origin: left;
         }
+
         @media (min-width: 768px) {
             .stretched-text { transform: scaleX(1.2); }
         }
 
         .section-title-large {
-            font-size: 1.875rem;
+            font-size: 1.875rem; 
             font-weight: 800;
             text-transform: uppercase;
             color: var(--gold-primary);
@@ -77,6 +112,7 @@
             transform: scaleX(1.1);
             transform-origin: center;
         }
+
         @media (min-width: 768px) {
             .section-title-large {
                 font-size: 3rem;
@@ -85,11 +121,12 @@
         }
 
         .gold-text { color: var(--gold-primary); font-size: 21px; }
-       
+        
         .gold-btn-gradient {
             background: var(--gold-gradient);
             transition: all 0.3s ease;
         }
+
         .gold-btn-gradient:hover {
             box-shadow: 0 0 25px rgba(244, 180, 26, 0.5);
             transform: translateY(-2px);
@@ -101,6 +138,7 @@
             box-shadow: 0 0 40px rgba(88, 28, 135, 0.2);
             border-radius: 1.5rem;
         }
+
         @media (min-width: 768px) {
             .pro-container { border-radius: 2.5rem; }
         }
@@ -113,33 +151,98 @@
             background-color: rgba(244, 180, 26, 0.05);
         }
 
-        .custom-grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; }
-        .custom-grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
-
-        @media (min-width: 1024px) {
-            .custom-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 64px; }
-            .custom-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .asset-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--gold-primary);
+            box-shadow: 0 0 20px rgba(244, 180, 26, 0.25);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
+        .asset-box:hover { transform: translateY(-5px); box-shadow: 0 0 35px rgba(244, 180, 26, 0.4); }
+
+        .phase-box {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1.5px solid rgba(244, 180, 26, 0.2);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .phase-box:hover { border-color: var(--gold-primary); box-shadow: 0 0 25px rgba(244, 180, 26, 0.2); transform: translateY(-5px); }
+
+        .stat-card {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1.5px solid rgba(244, 180, 26, 0.2);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @media (min-width: 768px) {
+            .stat-card { padding: 1.5rem 2rem; }
+        }
+        .stat-card:hover { border-color: var(--gold-primary); box-shadow: 0 0 35px rgba(244, 180, 26, 0.3); transform: scale(1.02) translateY(-5px); }
 
         #star-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
         .star { position: absolute; background: #FFF; border-radius: 50%; }
         .star-cross { clip-path: polygon(50% 0%, 55% 45%, 100% 50%, 55% 55%, 50% 100%, 45% 55%, 0% 50%, 45% 45%); background: linear-gradient(45deg, #FFF, var(--gold-primary)); }
-
+        
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
             50% { opacity: 1; transform: scale(1.2) rotate(90deg); }
         }
+
+        .shooting-star {
+            position: absolute; width: 150px; height: 2px;
+            background: linear-gradient(90deg, rgba(244, 180, 26, 1) 0%, rgba(244, 180, 26, 0) 100%);
+            border-radius: 999px; pointer-events: none; z-index: 1;
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .feature-bar {
+            background: linear-gradient(90deg, #0f051a 0%, #1a0b2e 100%);
+            border: 2px solid var(--purple-border);
+            border-radius: 2rem; 
+            padding: 3rem 1.5rem; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem; 
+            box-shadow: 0 0 40px rgba(88, 28, 135, 0.2);
+        }
+        @media (min-width: 1024px) { 
+            .feature-bar { display: grid; grid-template-columns: repeat(4, 1fr); padding: 2.5rem; gap: 1.5rem; } 
+        }
+        
+        .hex-icon-box { display: flex; align-items: center; gap: 1.5rem; transition: transform 0.3s ease; width: 100%; max-width: 300px; }
+        @media (min-width: 1024px) { .hex-icon-box { max-width: none; width: auto; gap: 1rem; } }
+        
+        .hex-icon { width: 100px; height: 100px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 12px rgba(244, 180, 26, 0.5)); }
+        @media (min-width: 1024px) { .hex-icon { width: 90px; height: 90px; } }
+        .hex-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        .social-item {
+            width: 50px; height: 50px; background: #411d7c; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; border: 1px solid rgba(244, 180, 26, 0.2);
+        }
+        .social-item:hover { background: var(--gold-primary); transform: translateY(-5px); box-shadow: 0 0 20px rgba(244, 180, 26, 0.4); }
     </style>
 </head>
 <body class="antialiased">
+
     <div id="star-container"></div>
 
-    <!-- HEADER -->
+    <!-- --- HEADER --- -->
     <header id="main-header" class="fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto w-full relative">
             <nav class="bg-black/80 backdrop-blur-md border border-white/10 rounded-xl md:rounded-2xl py-3 px-4 md:px-6 lg:px-8 flex items-center justify-between w-full relative">
+                <!-- Logo -->
                 <div class="flex items-center"><img src="https://mine.hashnetwork.live/images/home/LogoIcon.png" alt="Hash Network" class="h-6 md:h-8"></div>
-               
+                
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-10">
                     <a href="#" class="gold-text font-medium text-[15px] uppercase tracking-wider">Home</a>
                     <a href="#" class="text-white/60 font-medium text-[15px] hover:text-[#F4B41A] transition-colors uppercase tracking-wider">About</a>
@@ -147,13 +250,16 @@
                     <a href="#" class="text-white/60 font-medium text-[15px] hover:text-[#F4B41A] transition-colors uppercase tracking-wider">Docs</a>
                 </div>
 
+                <!-- Right Action Area: Button + Hamburger (Mobile) -->
                 <div class="flex items-center gap-3">
                     <button class="gold-btn-gradient text-black px-4 md:px-6 py-1.5 md:py-2 rounded-lg font-bold text-[12px] md:text-[14px] uppercase tracking-tighter">Start Mining Now</button>
+                    <!-- Mobile Hamburger Button -->
                     <button id="mobile-menu-btn" class="md:hidden text-white hover:text-[#F4B41A] transition-colors focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
 
+                <!-- Mobile Dropdown Menu -->
                 <div id="mobile-menu" class="hidden absolute top-[calc(100%+10px)] left-0 w-full bg-[#0a0514]/95 backdrop-blur-xl border border-[#F4B41A]/30 rounded-xl p-5 flex flex-col gap-4 shadow-[0_10px_40px_rgba(0,0,0,0.8)] z-50">
                     <a href="#" class="gold-text font-bold text-lg uppercase tracking-wider border-b border-white/10 pb-3">Home</a>
                     <a href="#" class="text-white/80 font-bold text-lg hover:text-[#F4B41A] transition-colors uppercase tracking-wider border-b border-white/10 pb-3">About</a>
@@ -164,23 +270,20 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero-section" class="relative z-20">
+    <!-- --- HERO SECTION --- -->
+    <section id="hero-section" class="relative z-20 reveal">
         <div class="max-w-7xl mx-auto w-full custom-grid-2 items-center">
             <div class="flex flex-col">
+                <!-- SỬA LỖI TẠI ĐÂY: Ép size trực tiếp cho chữ REWARD để thoát khỏi giới hạn 21px của class gold-text -->
                 <div class="hero-title-custom mb-6 flex flex-col font-bold uppercase w-full">
                     <div class="flex items-center justify-start gap-6 md:gap-12 w-full"><span class="stretched-text text-white flex-shrink-0">MINE</span><svg class="w-10 md:w-16 h-6 md:h-8 gold-text flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 64 24" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h56M46 4l12 8-12 8" /></svg></div>
                     <div class="flex items-center justify-start gap-6 md:gap-12 w-full"><span class="stretched-text text-white flex-shrink-0">GROW</span><svg class="w-10 md:w-16 h-6 md:h-8 gold-text flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 64 24" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h56M46 4l12 8-12 8" /></svg></div>
                     <div class="flex items-center justify-start w-full"><span class="stretched-text flex-shrink-0" style="color: var(--gold-primary); font-size: inherit;">REWARD</span></div>
                 </div>
-
-                <div class="space-y-2 mb-6 text-[14px] md:text-[17px] font-light uppercase tracking-wider text-white/90">
-                    <p class="stretched-text">
-                        Turn participation <span class="gold-text font-bold text-[15px] md:text-[18px]">INTO HASH POWER.</span> 
-                        Turn hash power <span class="gold-text font-bold text-[15px] md:text-[18px]">INTO REAL MINING REWARDS.</span>
-                    </p>
+                <div class="space-y-2 mb-6 text-[14px] md:text-[18px] font-light uppercase tracking-wider text-white/90">
+                    <p class="stretched-text">Turn participation <span class="gold-text font-bold">INTO HASH POWER.</span></p><br>
+                    <p class="stretched-text">Turn hash power <span class="gold-text font-bold">INTO REAL MINING REWARDS.</span></p>
                 </div>
-
                 <div class="mb-6">
                     <button class="gold-btn-gradient text-black px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-lg md:text-xl flex items-center gap-3 group uppercase tracking-tight">Start Mining Now <span class="group-hover:translate-x-2 transition-transform">→</span></button>
                 </div>
@@ -195,8 +298,8 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about-section" class="relative z-10">
+    <!-- --- ABOUT SECTION --- -->
+    <section id="about-section" class="relative z-10 reveal">
         <div class="max-w-6xl mx-auto pro-container inner-box-padding custom-grid-2 items-center hover-glow-card">
             <div class="space-y-6 md:space-y-8">
                 <div class="text-[15px] md:text-[17px] leading-relaxed text-white/90 font-light">
@@ -209,8 +312,9 @@
         </div>
     </section>
 
-    <!-- PROCESS & WHY SECTION -->
-    <section id="process-section" class="relative z-10">
+    <!-- --- PROCESS & WHY SECTION --- -->
+    <section id="process-section" class="relative z-10 reveal">
+        <!-- 3 Bước Mining -->
         <div class="max-w-7xl mx-auto custom-grid-3 box-spacing">
             <div class="bg-[#050505] border border-[#F4B41A]/30 rounded-xl p-6 flex items-center justify-between hover-glow-card">
                 <div>
@@ -235,6 +339,7 @@
             </div>
         </div>
 
+        <!-- Why Hash Network -->
         <div class="max-w-7xl mx-auto pro-container inner-box-padding">
             <h2 class="section-title-large title-spacing">WHY HASH NETWORK?</h2>
             <div class="custom-grid-2">
@@ -258,15 +363,17 @@
         </div>
     </section>
 
-    <!-- TOKENOMICS -->
-    <section id="tokenomics-section" class="relative z-10">
+    <!-- --- TOKENOMICS SECTION --- -->
+    <section id="tokenomics-section" class="relative z-10 reveal">
         <div class="max-w-7xl mx-auto">
             <h2 class="section-title-large title-spacing">$HASH TOKENOMICS</h2>
-            <div id="tokenomics-grid" class="custom-grid-2">
+            <div id="tokenomics-grid">
+                
                 <div class="asset-box min-h-[400px] lg:min-h-[600px] flex items-center justify-center p-4">
                     <img src="https://mine.hashnetwork.live/images/home/Tokenomics.png" class="w-full h-full object-contain">
                 </div>
-                <div id="tokenomics-right-col" class="space-y-6">
+                
+                <div id="tokenomics-right-col">
                     <div class="asset-box h-[300px] lg:h-[450px] flex items-center justify-center p-4">
                         <img src="https://mine.hashnetwork.live/images/home/Allocation.png" class="w-full h-full object-contain">
                     </div>
@@ -285,8 +392,8 @@
         </div>
     </section>
 
-    <!-- ROADMAP -->
-    <section id="roadmap-section" class="relative z-10">
+    <!-- --- ROADMAP & STATS SECTION --- -->
+    <section id="roadmap-section" class="relative z-10 reveal">
         <div class="max-w-7xl mx-auto pro-container inner-box-padding box-spacing">
             <div class="custom-grid-3">
                 <div class="phase-box">
@@ -305,6 +412,7 @@
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">Dashboard Development:</span> Real-time tracking of mining performance and rewards</li>
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">Reward System:</span> Automated reward distribution and claim mechanism</li>
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">Referral System:</span> Incentivized user growth and network expansion</li>
+                        <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">Network Effects Activation:</span> Scaling user base through community-driven growth</li>
                     </ul>
                 </div>
                 <div class="phase-box">
@@ -313,22 +421,37 @@
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">TGE:</span> Official launch of $HASH token</li>
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">Exchange Listings:</span> Improve accessibility and trading volume</li>
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">Staking & DeFi Integration:</span> Enable yield generation and asset growth</li>
+                        <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">SDK Development:</span> Enable third-party developers to build on Hash Network</li>
                         <li class="relative before:content-['•'] before:text-[#F4B41A] before:absolute before:-left-4"><span class="font-bold">DAO Governance:</span> Transition toward community-driven decision-making</li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <div class="max-w-7xl mx-auto custom-grid-3">
+            <div class="stat-card justify-center md:justify-start gap-5 md:gap-8">
+                <div class="w-[70px] h-[70px] md:w-[110px] md:h-[110px] flex-shrink-0"><svg viewBox="0 0 100 100" fill="none"><rect x="35" y="15" width="45" height="75" rx="8" stroke="#F4B41A" stroke-width="4"/><circle cx="28" cy="35" r="18" fill="black" stroke="#F4B41A" stroke-width="4"/><text x="21" y="42" fill="#F4B41A" font-family="Arial" font-weight="900" font-size="20">$</text><circle cx="28" cy="72" r="15" fill="black" stroke="#F4B41A" stroke-width="3"/><path d="M22 68L34 68M22 76L34 76" stroke="#F4B41A" stroke-width="2"/><path d="M55 40H70M55 50H70" stroke="#F4B41A" stroke-width="3"/></svg></div>
+                <div class="flex flex-col items-start md:items-center"><div class="gold-text font-black text-[14px] md:text-base uppercase stretched-text mb-1">TRANSACTIONS</div><div class="gold-text text-3xl md:text-4xl font-bold uppercase leading-none">1M+</div></div>
+            </div>
+            <div class="stat-card justify-center md:justify-start gap-5 md:gap-8">
+                <div class="w-[70px] h-[70px] md:w-[110px] md:h-[110px] flex-shrink-0"><svg viewBox="0 0 100 100" fill="#F4B41A"><circle cx="50" cy="45" r="18" stroke="black" stroke-width="2"/><path d="M20 90C20 70 35 60 50 60C65 60 80 70 80 90H20Z" stroke="black" stroke-width="2"/><circle cx="22" cy="55" r="12" opacity="0.6" stroke="black" stroke-width="1"/><path d="M5 90C5 75 12 70 22 70C32 70 39 75 39 90H5Z" opacity="0.6" stroke="black" stroke-width="1"/></svg></div>
+                <div class="flex flex-col items-start md:items-center"><div class="gold-text font-black text-[14px] md:text-base uppercase stretched-text mb-1">TOTAL USERS</div><div class="gold-text text-3xl md:text-4xl font-bold uppercase leading-none">100K+</div></div>
+            </div>
+            <div class="stat-card justify-center md:justify-start gap-5 md:gap-8">
+                <div class="w-[70px] h-[70px] md:w-[110px] md:h-[110px] flex-shrink-0"><svg viewBox="0 0 120 100" fill="#F4B41A"><path d="M20 35C20 30 25 25 30 25H110V85C110 90 105 95 100 95H20V35Z" stroke="black" stroke-width="2"/><rect x="30" y="10" width="50" height="25" rx="3" transform="rotate(-10 30 10)" opacity="0.7"/><path d="M80 50H115V75H80C75 75 70 70 70 62.5C70 55 75 50 80 50Z" fill="black" stroke="#F4B41A" stroke-width="3"/><circle cx="100" cy="62.5" r="5" fill="#F4B41A"/></svg></div>
+                <div class="flex flex-col items-start md:items-center"><div class="gold-text font-black text-[14px] md:text-base uppercase stretched-text mb-1">WALLET</div><div class="gold-text text-3xl md:text-4xl font-bold uppercase leading-none">100K+</div></div>
+            </div>
+        </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="footer-section" class="relative z-10">
+    <!-- --- FOOTER SECTION --- -->
+    <footer id="footer-section" class="relative z-10 reveal">
         <div class="max-w-7xl mx-auto feature-bar box-spacing">
             <div class="hex-icon-box"><div class="hex-icon"><img src="https://mine.hashnetwork.live/images/home/IconMINEPOWER.png" alt="Mine"></div><div><h4 class="font-bold uppercase tracking-tighter text-2xl lg:text-xl whitespace-nowrap lg:whitespace-normal">MINE<span class="lg:hidden"> </span><br class="hidden lg:block">POWER</h4></div></div>
             <div class="hex-icon-box"><div class="hex-icon"><img src="https://mine.hashnetwork.live/images/home/IconGROWTOGETHER.png" alt="Grow"></div><div><h4 class="font-bold uppercase tracking-tighter text-2xl lg:text-xl whitespace-nowrap lg:whitespace-normal">GROW<span class="lg:hidden"> </span><br class="hidden lg:block">TOGETHER</h4></div></div>
             <div class="hex-icon-box"><div class="hex-icon"><img src="https://mine.hashnetwork.live/images/home/IconEARNREWARD.png" alt="Earn"></div><div><h4 class="font-bold uppercase tracking-tighter text-2xl lg:text-xl whitespace-nowrap lg:whitespace-normal">EARN<span class="lg:hidden"> </span><br class="hidden lg:block">REWARDS</h4></div></div>
             <div class="hex-icon-box"><div class="hex-icon"><img src="https://mine.hashnetwork.live/images/home/IconBUILDTHEFUTURE.png" alt="Build"></div><div><h4 class="font-bold uppercase tracking-tighter text-2xl lg:text-xl whitespace-nowrap lg:whitespace-normal">BUILD<span class="lg:hidden"> </span><br class="hidden lg:block">FUTURE</h4></div></div>
         </div>
-
         <div id="footer-middle-grid" class="max-w-7xl mx-auto items-center box-spacing">
             <div class="flex justify-center mt-6 md:mt-0">
                 <img src="https://mine.hashnetwork.live/images/home/Farm3.png" class="w-full max-w-[350px] md:max-w-[500px]">
@@ -338,7 +461,6 @@
                 <div class="text-2xl md:text-5xl font-extrabold uppercase leading-tight tracking-tight"><div class="text-white">Start Mining Today.</div><div class="gold-text">Grow Tomorrow. Earn Forever.</div></div>
             </div>
         </div>
-
         <div class="max-w-7xl mx-auto pt-8 md:pt-10 border-t border-white/10 flex justify-center">
             <div class="flex gap-4 md:gap-6">
                 <a href="#" class="social-item"><i class="fab fa-telegram-plane text-white text-xl"></i></a>
@@ -347,7 +469,9 @@
         </div>
     </footer>
 
+    <!-- --- MODULE: GLOBAL SCRIPTS --- -->
     <script>
+        // Star Animation Logic
         const starContainer = document.getElementById('star-container');
         for (let i = 0; i < 400; i++) {
             const star = document.createElement('div');
@@ -361,10 +485,37 @@
             starContainer.appendChild(star);
         }
 
+        function createShootingStar() {
+            const s = document.createElement('div'); s.className = 'shooting-star';
+            s.style.left = Math.random() * window.innerWidth + 'px'; s.style.top = Math.random() * (window.innerHeight/2) + 'px';
+            starContainer.appendChild(s);
+            s.animate([{ transform: 'translate(0,0) rotate(45deg)', opacity: 1 }, { transform: 'translate(600px, 600px) rotate(45deg)', opacity: 0 }], { duration: 1500, easing: 'ease-in' }).onfinish = () => s.remove();
+        }
+        setInterval(() => { if(Math.random() > 0.6) createShootingStar(); }, 1500);
+
+        // Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+                else entry.target.classList.remove('active');
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
         });
     </script>
 </body>
